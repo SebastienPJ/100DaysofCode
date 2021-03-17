@@ -1,0 +1,51 @@
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+
+
+left_or_right = input("You have stumbled upon a crosswalk with mysterious ancient hieroglyphs. "
+                      "Will you make a left or or right? ").lower()
+
+
+if left_or_right == "left":
+  swim_or_wait = input("You encounter a puzzling body of water in this underground tunnel. "
+                       "Nighttime may reveal more clues under the moonlight. Will you swim or wait? ").lower()
+  if swim_or_wait == "wait":
+    choose_door = input("Running for dear life from venomous crocodiles, you burst into a room with three doors. "
+                        "You have seconds before the crocodiles have their for lunch. "
+                        "Will you go through the Red, Yellow, or Blue door? ").lower()
+    if choose_door == "blue":
+      print("You are pulled in by a mysterious blinding light and land in the very room full crocs. Game Over!")
+    elif choose_door == "red":
+      print("The door opens. As you walk through, it immediately closes with you in between, crushing you. Game Over!")
+    elif choose_door == "yellow":
+      print("You enter a room full of unimaginable diamonds and priceless jewels. "
+            "Now go find your island and become a count!")
+    else:
+      print("That was not an option. The Game Fairies appear to give you a scolding. Game Over.")
+  else:
+    print("You are swallowed whole by the Lochness Monster, proving its existence. "
+          "Your death will be celebrated by conspiracy theorists the world over. Game Over!")
+else:
+  print("You are pierced by 1000 shooting darts. Game Over!")

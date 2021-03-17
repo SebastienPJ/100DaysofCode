@@ -1,0 +1,54 @@
+import random
+import art
+number = random. randint(1,100)
+end_game = False
+
+def choose_difficulty():
+    difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
+
+    if difficulty == 'easy':
+        return 10
+    else:
+        return 5
+
+def evaluate():
+    if guess > number:
+        return "Too high"
+    elif guess < number:
+        return "Too low"
+    else:
+        return f"You got it! The answer was {number}"
+        
+print(art.logo)       
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
+print(f"Pssst, the correct answer is {number}")
+
+lives = choose_difficulty()
+
+
+while not end_game:
+    print(f"You have {lives} attempts remaining to guess the number.")
+    guess = int(input("Make a guess: "))
+    
+    if evaluate() == "Too high" or evaluate() == "Too low":
+        lives -= 1
+        if lives > 0:
+            print(evaluate())
+            print("Guess Again.")
+        
+    if guess == number:
+        print(evaluate())
+        end_game = True
+
+
+    if lives == 0:
+        print(evaluate())
+        print("You've run out of guesses, you lose.")
+        end_game = True
+
+
+
+
+
+

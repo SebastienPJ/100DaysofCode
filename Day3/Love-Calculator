@@ -1,0 +1,53 @@
+# 🚨 Don't change the code below 👇
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+
+
+your_name_lowercase = name1.lower()
+their_name_lowercase = name2.lower()
+
+count_your_t = your_name_lowercase.count("t")
+count_your_r = your_name_lowercase.count("r")
+count_your_u = your_name_lowercase.count("u")
+count_your_e = your_name_lowercase.count("e")
+count_your_l = your_name_lowercase.count("l")
+count_your_o = your_name_lowercase.count("o")
+count_your_v = your_name_lowercase.count("v")
+
+
+count_their_t = their_name_lowercase.count("t")
+count_their_r = their_name_lowercase.count("r")
+count_their_u = their_name_lowercase.count("u")
+count_their_e = their_name_lowercase.count("e")
+count_their_l = their_name_lowercase.count("l")
+count_their_o = their_name_lowercase.count("o")
+count_their_v = their_name_lowercase.count("v")
+
+total_count_t = count_your_t + count_their_t
+total_count_r = count_your_r + count_their_r
+total_count_u = count_your_u + count_their_u
+total_count_e = count_your_e + count_their_e
+total_count_l = count_your_l + count_their_l
+total_count_o = count_your_o + count_their_o
+total_count_v = count_your_v + count_their_v
+
+first_number = total_count_t + total_count_r + total_count_u + total_count_e
+second_number = total_count_l + total_count_o + total_count_v + total_count_e
+
+love_score = int(str(first_number) + str(second_number))
+
+
+
+if love_score <= 10 or love_score >= 90:
+  print(f"Your score is {love_score}, you go together like coke and mentos.")
+
+elif love_score > 40 and love_score < 50:
+  print(f"Your score is {love_score}, you are alright together.")
+
+
+else:
+  print(f"Your score is {love_score}.")

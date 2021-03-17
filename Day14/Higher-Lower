@@ -1,0 +1,52 @@
+import random
+from game_data import data
+from replit import clear
+import art
+
+def random_profile():
+    return random.choice(data)
+
+def evaluate(a_follower_count, b_follower_count):
+    if a_follower_count > b_follower_count:
+        return "A"
+    else:
+        return "B"
+
+
+game_over = False
+
+
+a = random_profile()
+b = random_profile()
+score = 0
+
+print(art.logo)
+
+while not game_over:
+    # print(a["follower_count"])
+    print(f"Compare A: {a['name']}, a(n) {a['description']}, from {a['country']}")
+    
+    print(art.vs)
+
+    # print(b["follower_count"])
+    print(f"Against B: {b['name']}, a(n) {b['description']}, from {b['country']}")
+
+    user_guess = input("Who has more followers? Type 'A' or 'B': ").upper()
+    
+
+    answer = evaluate(a["follower_count"], b["follower_count"])
+    
+
+    if user_guess == answer:
+        clear()
+        score += 1
+        a = b
+        b = random_profile()
+        print(art.logo)
+        print(f"You're right! Current Score: {score}.")
+    else:
+        clear()
+        print(art.logo)
+        print(f"Sorry, that's wrong. Final Score: {score}")
+        game_over = True
+
